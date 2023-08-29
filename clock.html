@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>clock</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        body{
+            background-color: pink;
+        }
+        .clock{
+         padding-top: 300px;
+          padding-left: 500px;
+        color: rgb(26, 18, 99);
+        font-size: xx-large 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id ="clock" class="clock"></div>
+    <script type="text/javascript">
+function showTime(){
+    var date = new Date();
+    var h = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    var session = "AM";
+    if(h==0){
+        h = 12;
+    }
+    if(h>12){
+        h=h-12;
+        session ="PM"
+    }
+    if(h<10){
+        h="0"+h;
+    }
+    if(m<10){
+        m="0"+m;
+    }
+    if(s<10){
+        s="0"+s;
+    }
+    document.getElementById("clock").innerHTML = h + ":" + m + ":" + s + "" + session;
+    setTimeout(showTime,1000);
+}
+showTime();
+    </script>
+</body>
+</html></html>
